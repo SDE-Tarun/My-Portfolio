@@ -14,8 +14,8 @@ const About = ({bgcolor,darkmode}) => {
           <p className="my-4  lg:text-nowrap "
            style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}
           >
-            I have Completed My <span className="font-bold">B.Tech Degree </span>From Ganga institute of technology and management  <br /> Engineering College, Kabalana.
-            My Specilization in <span className="font-bold">Computer Science Engineering (CSE)</span>
+            I hold a <span className="font-bold">B.Tech in Information Technology </span>From Maharaja Surajmal Institute of Technology. <br /> 
+            Enabling me to tackle complex technical challenges and deliver innovative solutions.
              
             <br />{" "}
           </p>
@@ -23,13 +23,10 @@ const About = ({bgcolor,darkmode}) => {
           <p className="lg:text-nowrap"
            style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}       
           >
-            My aim is to bring across your message and identity in the most
-            creative way. I <br />
-            creates <span className="font-bold">web design</span> for different screen sizes.<br/>
+           As a <span className="font-bold">Full Stack Developer,</span> my mission is to transform ideas into visually compelling and <br />
+           functional web solutions. I excel in creating <span className="font-bold">responsive web designs</span> tailored for various devices.<br/>
             <br/>
-            Proven ability to create <span className="font-bold">reusable components </span> for an
-            enterprise-level web application.<br/>Passionate about <span className="font-bold">technology and building scalable web
-            solutions </span>
+            My experience includes developing <span className="font-bold">reusable components </span> for enterprise-level applications, driven by <br/> a passion for <span className="font-bold">technology and scalable solutions. </span>
           </p>
           <h1 className="text-2xl my-5 font-italic"
            style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}  
@@ -46,8 +43,8 @@ const About = ({bgcolor,darkmode}) => {
                 <p className="text-sm"
                  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}
                 >
-                 With a deep understanding of <span className="font-bold">HTML, CSS, JavaScript</span>, and modern frameworks like <span className="font-bold">React</span>
-                  .I transform design concepts into dynamic, user-friendly websites. 
+                 With a deep understanding of <span className="font-bold">HTML, CSS, JavaScript</span>, and modern frameworks like <span className="font-bold">React. </span>
+                  I transform design concepts into dynamic, user-friendly websites. 
                 </p>
               </div>
             </div>
@@ -61,7 +58,7 @@ const About = ({bgcolor,darkmode}) => {
                 <p className="text-sm"
                   style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}
                 >
-                   It's used for <span className="font-bold">storing, tracking, and collaborating on software projects </span>. It makes it easy for developers to share code files.
+                   It's used for <span className="font-bold">storing, tracking, and collaborating on software projects. </span> It makes it easy for developers to share code files.
                 </p>
               </div>
             </div>

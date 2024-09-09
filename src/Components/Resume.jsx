@@ -20,27 +20,36 @@ const Resume = ({bgcolor,darkmode}) => {
               className="ui-ux-design w-80 flex flex-col gap-2 p-4 rounded-lg"
               style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
             >
-              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2020-2024</p>
-              <h1  style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}  >B.Tech in CSE,Maharshi Dayanand University</h1>
-              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>Rohtak,Haryana</h1>
+              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2018-2022</p>
+              <h1  style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}  >B.Tech in I.T, Maharaja Surajmal Institute of Technology</h1>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>New Delhi, India</h1>
             </div>
 
             <div
               className="ui-ux-design w-80 flex flex-col gap-2 p-4 rounded-lg"
               style={{background:`${bgcolor==="white" ? "#EEF5FA" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
             >
-              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2019-2020</p>
-              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}>12th Class in Shivhari KSV School</h1>
-              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>Kadi,Mehsana(Gujarat)</h1>
+              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2016-2019</p>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}>Diploma in E.C.E, Aditya Institute of Technology</h1>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>New Delhi, India</h1>
             </div>
 
             <div
               className="ui-ux-design w-80 flex flex-col gap-2 p-4 rounded-lg"
               style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
             >
-              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2017-2018</p>
-              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}>10th Class,Holy Family School</h1>
-              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>Kadi,Mehsana(Gujarat)</h1>
+              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2015-2016</p>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}>12th Class, K.V.J.N.U School</h1>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>New Delhi, India</h1>
+            </div>
+
+            <div
+              className="ui-ux-design w-80 flex flex-col gap-2 p-4 rounded-lg"
+              style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
+            >
+              <p  style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}  >2013-2014</p>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "white"}`}}>10th Class, K.V.J.N.U School</h1>
+              <h1 style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}>New Delhi, India</h1>
             </div>
           </div>
 
