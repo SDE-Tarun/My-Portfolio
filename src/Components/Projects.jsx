@@ -29,7 +29,7 @@ const Projects = ({bgcolor,darkmode}) => {
             </div>
             </a>
 
-            <a href="https://lighthearted-zuccutto-7672ad.netlify.app/">
+            <a href="https://lighthearted-zuccutto-7672ad.netlify.app/" target="_blank">
             <div
               className="ui-ux-design w-80 flex flex-col gap-3 p-5 rounded-lg"
               style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
