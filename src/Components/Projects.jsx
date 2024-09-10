@@ -1,6 +1,7 @@
 import React from "react";
 import "../Components/Global.css";
 import project1 from "../Components/SocialLinks/e commerce ss.png"
+import project2 from "../Components/SocialLinks/My-Portfolio.png"
 
 
 
@@ -24,6 +25,22 @@ const Projects = ({bgcolor,darkmode}) => {
               <div>
 
                 <h1 className={`text-md font-bold ${bgcolor==="white" ? "text-black" :"text-white"}`}>E-commerce Clothing Website (Reactjs,Tailwind,Firebase)</h1>
+              </div>
+            </div>
+            </a>
+
+            <a href="https://lighthearted-zuccutto-7672ad.netlify.app/">
+            <div
+              className="ui-ux-design w-80 flex flex-col gap-3 p-5 rounded-lg"
+              style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
+            >
+              <img
+                src={project2}
+                className="rounded-lg transition delay-150"
+              />
+              <div>
+
+                <h1 className={`text-md font-bold ${bgcolor==="white" ? "text-black" :"text-white"}`}>My Portfolio Website (Reactjs,Tailwind,Javascript)</h1>
               </div>
             </div>
             </a>
