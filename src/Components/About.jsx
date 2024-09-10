@@ -14,7 +14,7 @@ const About = ({bgcolor,darkmode}) => {
           <p className="my-4  lg:text-nowrap "
            style={{ color: `${bgcolor==="white" ? "#000000" : "#A6A6A6"}`}}
           >
-            I hold a <span className="font-bold">B.Tech in Information Technology </span>From Maharaja Surajmal Institute of Technology. <br /> 
+            I hold a <span className="font-bold">B.Tech in Information Technology </span>from Maharaja Surajmal Institute of Technology. <br /> 
             Enabling me to tackle complex technical challenges and deliver innovative solutions.
              
             <br />{" "}
