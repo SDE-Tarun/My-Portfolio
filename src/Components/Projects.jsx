@@ -13,7 +13,7 @@ const Projects = ({bgcolor,darkmode}) => {
           <h1 className={`text-3xl font-bold ${bgcolor==="white" ? "text-black" :"text-white"}`}>Projects</h1>
 
           <div className="flex gap-5 flex-wrap my-5">
-          <a href="https://amazing-toffee-71729d.netlify.app">
+          <a href="https://amazing-toffee-71729d.netlify.app/" target="_blank">
             <div
               className="ui-ux-design w-80 flex flex-col gap-3 p-5 rounded-lg"
               style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
