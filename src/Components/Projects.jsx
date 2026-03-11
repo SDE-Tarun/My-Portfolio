@@ -3,6 +3,7 @@ import "../Components/Global.css";
 import project1 from "../Components/SocialLinks/AI Code Reviewer.png"
 import project2 from "../Components/SocialLinks/Ecommerce.png"
 import project3 from "../Components/SocialLinks/Portfolio.png"
+import project4 from "../Components/SocialLinks/Anaplan.jpg"
 
 
 
@@ -70,7 +71,7 @@ const Projects = ({bgcolor,darkmode}) => {
               style={{background:`${bgcolor==="white" ? "#FFF4F4" :"black"}`,  border:`${bgcolor==="white" ? "none" :"1px solid #A6A6A6"}`}}
             >
               <img
-                src="https://media.licdn.com/dms/image/D4D05AQHD3mSUi1vMEA/feedshare-thumbnail_720_1280/0/1687878350821?e=2147483647&v=beta&t=PQdgHocFCS_yoMH2sXlXUrsHWn-ZsX0KyCyh4b8khOc"
+                src={project4}
                 className="rounded-lg transition delay-150"
               />
               <div>

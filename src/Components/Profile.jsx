@@ -156,9 +156,16 @@ const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
             darkmode === "dark" ? "bg-black" : "bg-white"
           }`}
         >
-          <div className="w-40 h-40 rounded-full  image">
+          {/* <div className="w-40 h-40 rounded-full  image">
             <img src="https://ouch-cdn2.icons8.com/P04BVguXl9qg8fPAz0wwHxpR8nzqdCx4DYkmKM9QlkQ/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjIx/LzIyOGQ2OGVhLWE3/NzEtNGMxMS1hNTRl/LWI5MzI3NjY5MDZm/ZC5wbmc.png" className="w-screen rounded-lg" />
-          </div>
+          </div> */}
+          <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-lg">
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+    className="w-full h-full object-cover"
+  />
+</div>
+
           <h1
             className={`text-2xl font-bold relative lg:top-16 sm:top-24 ${
               bgcolor === "white" ? "text-black" : "text-white"
