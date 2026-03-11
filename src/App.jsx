@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import About from "./Components/About";
 import Navbar from "./Components/Navbar";
@@ -19,6 +19,14 @@ function App() {
   const [bgcolor, setBgcolor] = useState("white");
   const[cross,setCross]=useState(false)
 
+  // ensure body has the correct background when component mounts
+  useEffect(() => {
+    document.body.style.backgroundImage =
+      "url(./Components/SocialLinks/background.jpg)";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+  }, []);
+
   const handleclick=()=>{
     setShow(true)
     setCross(true)
@@ -31,16 +39,24 @@ function App() {
 
 
   const handleDarkMode = () => {
+    // paths can be swapped out for any images you prefer; keep them in
+    // Components/SocialLinks for easy bundling.
+    const lightBg = "url(./Components/SocialLinks/background.jpg)";
+    const darkBg =
+      "url(https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"; // dark-themed image
+
     if (darkmode === "light") {
       setDarkmode("dark");
-      document.body.style.backgroundImage =
-        "url(https://i.pinimg.com/564x/37/24/db/3724db00677625d737f96f8faf8e31de.jpg)";
+      document.body.style.backgroundImage = darkBg;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
       document.body.style.width = "100%";
       setBgcolor("black");
     } else {
       setDarkmode("light");
-      document.body.style.backgroundImage =
-        "url(./Components/SocialLinks/background.jpg)";
+      document.body.style.backgroundImage = lightBg;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
       setBgcolor("white");
     }
   };

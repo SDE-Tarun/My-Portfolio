@@ -1,5 +1,15 @@
-html,body{
+/* html,body{
    background-image: url("https://extendthemes.com/demos/mesmerize-pro-portfolio/wp-content/uploads/sites/16/2016/06/cropped-background-2726039-6x4.jpg");
+   scroll-behavior: smooth;
+   height: 100%;
+   width: 100%;
+} */
+
+html,body{
+   background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    scroll-behavior: smooth;
    height: 100%;
    width: 100%;

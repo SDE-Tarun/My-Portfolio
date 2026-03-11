@@ -17,6 +17,7 @@ import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { LiaBlogSolid } from "react-icons/lia";
 import { FaBriefcase } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import ProfileImage from "../Components/SocialLinks/Profile.jpg";
 
 const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
 
@@ -184,7 +185,7 @@ const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
           </div> */}
           <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-lg">
   <img
-    src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+    src={ProfileImage}
     className="w-full h-full object-cover"
   />
 </div>
