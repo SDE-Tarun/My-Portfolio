@@ -18,15 +18,8 @@ const Experience = ({ bgcolor, darkmode }) => {
       location: "Delhi, India",
     },
     {
-      company: "Freelance",
-      role: "Independent Developer",
-      start: "May 2024",
-      end: "Sep 2024",
-      location: "Remote",
-    },
-    {
       company: "Coding Blocks",
-      role: "Apprentice (Full Stack Developer)",
+      role: "Apprentice (Training + Client Projects)",
       start: "Sep 2024",
       end: "August 2025",
       location: "Noida, Uttar Pradesh, India",
