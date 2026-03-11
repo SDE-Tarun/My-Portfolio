@@ -39,7 +39,7 @@ const Experience = ({ bgcolor, darkmode }) => {
       location: "Greater Noida, Uttar Pradesh, India",
     },
     {
-      company: "Autobit Service Private Limited",
+      company: "Autobit Software Service Private Limited",
       role: "Software Developer",
       start: "Mar 2026",
       end: "Present",
