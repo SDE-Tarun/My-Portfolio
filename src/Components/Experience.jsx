@@ -19,7 +19,7 @@ const Experience = ({ bgcolor, darkmode }) => {
     },
     {
       company: "Coding Blocks",
-      role: "Apprentice (Training + Client Projects)",
+      role: "Full Stack Developer Apprentice (Training + Client Projects)",
       start: "Sep 2024",
       end: "August 2025",
       location: "Noida, Uttar Pradesh, India",
