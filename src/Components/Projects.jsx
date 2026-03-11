@@ -2,7 +2,7 @@ import React from "react";
 import "../Components/Global.css";
 import project1 from "../Components/SocialLinks/AI Code Reviewer.png"
 import project2 from "../Components/SocialLinks/Ecommerce.png"
-import project3 from "../Components/SocialLinks/Portfolio.png"
+import project3 from "../Components/SocialLinks/Portfolio_bg.png"
 import project4 from "../Components/SocialLinks/Anaplan.jpg"
 
 
