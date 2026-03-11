@@ -5,14 +5,14 @@ const Experience = ({ bgcolor, darkmode }) => {
   const experiences = [
     {
       company: "Polestar Solutions and Services",
-      role: "Software Developer",
+      role: "Full Stack Developer",
       start: "Mar 2022",
       end: "Jun 2023",
       location: "Noida, Uttar Pradesh, India",
     },
     {
       company: "YogpriDeal",
-      role: "Software Developer",
+      role: "Technical Support Engineer",
       start: "Jul 2023",
       end: "May 2024",
       location: "Delhi, India",
@@ -26,7 +26,7 @@ const Experience = ({ bgcolor, darkmode }) => {
     },
     {
       company: "Coding Blocks",
-      role: "Apprentice (Software)",
+      role: "Apprentice (Full Stack Developer)",
       start: "Sep 2024",
       end: "Feb 2025",
       location: "Noida, Uttar Pradesh, India",
@@ -40,7 +40,7 @@ const Experience = ({ bgcolor, darkmode }) => {
     },
     {
       company: "Autobit Software Service Private Limited",
-      role: "Software Developer",
+      role: "Full Stack Developer",
       start: "Mar 2026",
       end: "Present",
       location: "Noida, India",
