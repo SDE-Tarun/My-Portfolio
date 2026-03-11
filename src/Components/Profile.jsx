@@ -8,7 +8,7 @@ import { AiTwotoneMail } from "react-icons/ai";
 import { BsCalendarDate } from "react-icons/bs";
 import { MdOutlineFileDownload } from "react-icons/md";
 import "../Components/Global.css";
-import cv from "../Components/SocialLinks/Resume.pdf";
+import cv from "../Components/SocialLinks/Tarun_Resume.pdf";
 import { FaRegUser } from "react-icons/fa";
 import { PiNotepad } from "react-icons/pi";
 import { FaLaptopCode } from "react-icons/fa";
@@ -334,14 +334,37 @@ const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
               </div>
             </div>
           </div>
-          <div className="flex relative top-5">
+          {/* <div className="flex relative top-5">
             <button className="bg-blue-500 flex items-center rounded-lg justify-center text-white p-2 text-md text-nowrap w-36 h-10">
               <a href={cv} download="Resume" className="flex">
                 <MdOutlineFileDownload className="text-2xl" />
                 Download CV
               </a>
             </button>
-          </div>
+          </div> */}
+          <div className="flex relative top-5">
+  <a href={cv} download="Resume">
+    <button
+      className="cursor-pointer flex justify-between items-center bg-gray-800 px-4 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[160px]"
+    >
+      Resume
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="currentColor"
+        className="w-5 h-5 animate-bounce"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+        />
+      </svg>
+    </button>
+  </a>
+</div>
         </div>
       </div>
     </>
