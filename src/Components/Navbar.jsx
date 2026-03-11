@@ -3,6 +3,7 @@ import { FaRegUser } from "react-icons/fa";
 import { PiNotepad } from "react-icons/pi";
 import { FaLaptopCode } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
+import { FaBriefcase } from "react-icons/fa";
 import { LiaBlogSolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
@@ -41,6 +42,16 @@ const Navbar = ({bgcolor,darkmode}) => {
             >
               <FaLaptopCode className="text-2xl" />
               <h1 className="text-sm">Projects</h1>
+            </div>
+          </NavLink>
+
+          <NavLink to="/Experience">
+            <div
+              className="w-16 rounded-lg flex flex-col justify-center items-center p-2"
+              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
+            >
+              <FaBriefcase className="text-2xl" />
+              <h1 className="text-sm">Experience</h1>
             </div>
           </NavLink>
 

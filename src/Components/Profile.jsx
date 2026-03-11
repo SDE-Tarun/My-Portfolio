@@ -15,6 +15,7 @@ import { FaLaptopCode } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { LiaBlogSolid } from "react-icons/lia";
+import { FaBriefcase } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
@@ -97,7 +98,29 @@ const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
             </div>
           </NavLink>
 
-         
+          <NavLink to="/Experience">
+            <div
+              onClick={handleCross}
+              className="rounded-lg flex items-center p-2"
+              style={{
+                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
+              }}
+            >
+              <FaBriefcase
+                className={`text-xl my-1 ${
+                  bgcolor === "white" ? "text-black" : "text-white"
+                }`}
+              />
+              <h1
+                className={`text-sm my-1 ${
+                  bgcolor === "white" ? "text-black" : "text-white"
+                }`}
+              >
+                Experience
+              </h1>
+            </div>
+          </NavLink>
+
           <NavLink to="/Certify">
             <div
               onClick={handleCross}

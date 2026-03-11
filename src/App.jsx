@@ -10,6 +10,7 @@ import Projects from "./Components/Projects";
 import ForMobile from "./Components/ForMobile";
 import Certificate from "./Components/Certificate";
 import Home from "./Components/Home";
+import Experience from "./Components/Experience";
 
 function App() {
 
@@ -82,18 +83,23 @@ function App() {
             /> */}
 
             <Route
-              path="/Contact"
-              element={<Contact bgcolor={bgcolor} darkmode={darkmode} />}
-            />
-
-            <Route
               path="/Projects"
               element={<Projects bgcolor={bgcolor} darkmode={darkmode} />}
             />
 
             <Route
+              path="/Experience"
+              element={<Experience bgcolor={bgcolor} darkmode={darkmode} />}
+            />
+
+            <Route
               path="/Certify"
               element={<Certificate bgcolor={bgcolor} darkmode={darkmode} />}
+            />
+
+            <Route
+              path="/Contact"
+              element={<Contact bgcolor={bgcolor} darkmode={darkmode} />}
             />
           </Route>
         </Routes>
