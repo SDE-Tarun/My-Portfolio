@@ -19,7 +19,7 @@ const Experience = ({ bgcolor, darkmode }) => {
     },
     {
       company: "Coding Blocks",
-      role: "Full Stack Developer Apprentice (Training + Client Projects)",
+      role: "Full Stack Developer (Training + Client Projects)",
       start: "Sep 2024",
       end: "August 2025",
       location: "Noida, Uttar Pradesh, India",
@@ -30,13 +30,6 @@ const Experience = ({ bgcolor, darkmode }) => {
       start: "Sep 2025",
       end: "Dec 2025",
       location: "Greater Noida, Uttar Pradesh, India",
-    },
-    {
-      company: "Autobit Software Service Private Limited",
-      role: "Full Stack Developer",
-      start: "Mar 2026",
-      end: "Present",
-      location: "Noida, India",
     },
   ];
 
