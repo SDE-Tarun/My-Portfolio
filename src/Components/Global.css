@@ -1,18 +1,19 @@
-.image{
-    position: absolute;
-    top:-3.5rem
+.image {
+  position: absolute;
+  top: -3.5rem
 }
 
-.content-width{
-    width: 47rem;
+.content-width {
+  width: 47rem;
 }
 
-.btn-sumit{
-    border: 1px solid #1A1A1A;
+.btn-sumit {
+  border: 1px solid #1A1A1A;
 }
 
-html,body{
-    overflow-x: hidden;
+html,
+body {
+  overflow-x: hidden;
 }
 
 
@@ -20,15 +21,15 @@ html,body{
 
 
 @media (max-width:1200px) {
-    .content-width{
-        width: 100%
-    }
+  .content-width {
+    width: 100%
+  }
 }
 
 @media (max-width:1300px) {
-    .image{
-       top:-2.9rem
-    }
+  .image {
+    top: -2.9rem
+  }
 }
 
 .tracking-in-contract-bck {
@@ -41,9 +42,11 @@ html,body{
     transform: translateZ(400px);
     opacity: 0;
   }
+
   40% {
     opacity: 0.6;
   }
+
   100% {
     transform: translateZ(0);
     opacity: 1;

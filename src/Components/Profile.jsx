@@ -1,404 +1,325 @@
-import React, { useState } from "react";
-import { FaGooglePlus, FaInstagram, FaMailBulk, FaVoicemail } from "react-icons/fa";
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+import { FaLinkedin, FaBriefcase } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+import { AiTwotoneMail, AiOutlineSafetyCertificate } from "react-icons/ai";
 import { CiMobile4 } from "react-icons/ci";
 import { IoLocationSharp } from "react-icons/io5";
-import { AiTwotoneMail } from "react-icons/ai";
 import { BsCalendarDate } from "react-icons/bs";
-import { MdOutlineFileDownload } from "react-icons/md";
-import "../Components/Global.css";
-import cv from "../Components/SocialLinks/Resume.pdf";
 import { FaRegUser } from "react-icons/fa";
-import { PiNotepad } from "react-icons/pi";
 import { FaLaptopCode } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
-import { AiOutlineSafetyCertificate } from "react-icons/ai";
-import { LiaBlogSolid } from "react-icons/lia";
-import { FaBriefcase } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+
+import cv from "../Components/SocialLinks/Resume.pdf";
 import ProfileImage from "../Components/SocialLinks/Profile.jpg";
 
-const Profile = ({ show, setShow, darkmode, bgcolor,setCross }) => {
+const Profile = ({
+  show,
+  setShow,
+  darkmode,
+  bgcolor,
+  setCross,
+}) => {
+  const isDark = darkmode === "dark";
 
- const handleCross=()=>{
-  setCross(false)
-  setShow(false)
- }
+  const handleCross = () => {
+    setCross(false);
+    setShow(false);
+  };
+
+  const mobileLinks = [
+    {
+      icon: <FaRegUser />,
+      title: "About",
+      path: "/",
+    },
+    {
+      icon: <FaLaptopCode />,
+      title: "Projects",
+      path: "/Projects",
+    },
+    {
+      icon: <FaBriefcase />,
+      title: "Experience",
+      path: "/Experience",
+    },
+    {
+      icon: <AiOutlineSafetyCertificate />,
+      title: "Skills",
+      path: "/Certify",
+    },
+    {
+      icon: <TiContacts />,
+      title: "Contact",
+      path: "/Contact",
+    },
+  ];
 
   return (
     <>
-      {show ? (
+      {/* Mobile Navigation */}
+
+      {show && (
         <div
-          className={`${
-            darkmode === "dark" ? `bg-${bgcolor}` : `bg-white`
-          } lg:w-11/12  md:w-8/12 sm:w-11/12 absolute sm:top-50 z-20`}
+          className="
+          xl:hidden
+          fixed
+          top-24
+          left-4
+          right-4
+          z-50
+          rounded-3xl
+          shadow-2xl
+          border
+          p-4
+        "
+          style={{
+            background: isDark ? "#111111" : "#FFFFFF",
+            borderColor: isDark ? "#2F2F2F" : "#E5E7EB",
+          }}
         >
-          <NavLink to="/">
-            <div
-              onClick={handleCross}
-              className={`bg-slate-200 rounded-lg flex items-center p-2 gap-1`}
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <FaRegUser className="text-xl" />
-              <h1
-                className={`text-sm my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
+          <div className="flex flex-col gap-3">
+            {mobileLinks.map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.path}
+                onClick={handleCross}
               >
-                About
-              </h1>
-            </div>
-          </NavLink>
+                <div
+                  className="
+                  flex
+                  items-center
+                  gap-3
+                  p-3
+                  rounded-xl
+                  transition-all
+                  duration-300
+                  hover:bg-blue-500
+                  hover:text-white
+                "
+                  style={{
+                    background: isDark
+                      ? "#1D1D1D"
+                      : "#F8FAFC",
+                  }}
+                >
+                  <span className="text-xl">
+                    {item.icon}
+                  </span>
 
-          {/* <NavLink to="/Resume">
-            <div
-              onClick={handleCross}
-              className="rounded-lg flex items-center p-2"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <PiNotepad
-                className={`text-xl my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              />
-              <h1
-                className={`text-sm my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              >
-                Resume
-              </h1>
-            </div>
-          </NavLink> */}
-
-          <NavLink to="/Projects">
-            <div
-              onClick={handleCross}
-              className="rounded-lg flex items-center p-2"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <FaLaptopCode
-                className={`text-xl my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              />
-              <h1
-                className={`text-sm my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              >
-                Projects
-              </h1>
-            </div>
-          </NavLink>
-
-          <NavLink to="/Experience">
-            <div
-              onClick={handleCross}
-              className="rounded-lg flex items-center p-2"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <FaBriefcase
-                className={`text-xl my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              />
-              <h1
-                className={`text-sm my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              >
-                Experience
-              </h1>
-            </div>
-          </NavLink>
-
-          <NavLink to="/Certify">
-            <div
-              onClick={handleCross}
-              className="rounded-lg flex items-center p-2"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <AiOutlineSafetyCertificate
-                className={`text-xl my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              />
-              <h1
-                className={`text-sm my-1 ${
-                  bgcolor === "white" ? "text-black" : "text-white"
-                }`}
-              >
-                Skills
-              </h1>
-            </div>
-          </NavLink>
-
-          <NavLink to="/Contact">
-
-          <div
-          onClick={handleCross}
-          
-            className="rounded-lg flex items-center p-2"
-            style={{
-              background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-            }}
-          >
-            <TiContacts
-              className={`text-xl my-1 ${
-                bgcolor === "white" ? "text-black" : "text-white"
-              }`}
-            />
-            <h1
-              className={`text-sm my-1 ${
-                bgcolor === "white" ? "text-black" : "text-white"
-              }`}
-            >
-              Contact
-            </h1>
+                  <span>{item.title}</span>
+                </div>
+              </NavLink>
+            ))}
           </div>
-          </NavLink>
         </div>
+      )}
 
-        
-      ) : null}
+      {/* Profile Card */}
 
-      <div className="w-full flex justify-around">
+      <div className="w-full flex justify-center">
         <div
-          className={`lg:w-80 sm:w-96 h-12/12 rounded-lg p-10 flex flex-col items-center relative gap-7  ${
-            darkmode === "dark" ? "bg-black" : "bg-white"
-          }`}
+          className="
+          w-full
+          max-w-[350px]
+          rounded-3xl
+          p-6
+          shadow-xl
+          border
+        "
+          style={{
+            background: isDark ? "#111111" : "#FFFFFF",
+            borderColor: isDark ? "#2F2F2F" : "#E5E7EB",
+          }}
         >
-          {/* <div className="w-40 h-40 rounded-full  image">
-            <img src="https://ouch-cdn2.icons8.com/P04BVguXl9qg8fPAz0wwHxpR8nzqdCx4DYkmKM9QlkQ/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjIx/LzIyOGQ2OGVhLWE3/NzEtNGMxMS1hNTRl/LWI5MzI3NjY5MDZm/ZC5wbmc.png" className="w-screen rounded-lg" />
-          </div> */}
-          <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden shadow-lg">
-  <img
-    src={ProfileImage}
-    className="w-full h-full object-cover"
-  />
-</div>
+          {/* Availability */}
 
-          <h1
-            className={`text-2xl font-bold relative lg:top-16 sm:top-24 ${
-              bgcolor === "white" ? "text-black" : "text-white"
-            }`}
-          >
-            Tarun Kumar
-          </h1>
-          <div
-            className="passion w-6/12 h-8 p-2 relative lg:top-12 sm:top-20"
-            style={{
-              background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-            }}
-          >
+          <div className="flex justify-end mb-4">
+            <span
+              className="
+              px-3
+              py-1
+              rounded-full
+              text-xs
+              font-semibold
+              bg-green-100
+              text-green-600
+            "
+            >
+              ● Available for Work
+            </span>
+          </div>
+
+          {/* Profile Image */}
+
+          <div className="flex justify-center">
+            <img
+              src={ProfileImage}
+              alt="Tarun Kumar"
+              className="
+                w-36
+                h-36
+                rounded-full
+                object-cover
+                border-4
+                border-blue-500
+                shadow-lg
+              "
+            />
+          </div>
+
+          {/* Name */}
+
+          <div className="text-center mt-5">
             <h1
-              className={"text-center text-nowrap text-sm"}
-              style={{
-                color: `${bgcolor === "white" ? "#000000" : "#A6A6A6"}`,
-              }}
+              className={`text-3xl font-bold ${isDark
+                  ? "text-white"
+                  : "text-black"
+                }`}
             >
-            WEB DEVELOPER
+              Tarun Kumar
             </h1>
+
+            <p className="text-blue-500 font-medium mt-2">
+              Full Stack Developer
+            </p>
+
+            <p
+              className="text-sm mt-2"
+              style={{
+                color: isDark
+                  ? "#A6A6A6"
+                  : "#666666",
+              }}
+            >
+              React.js • Node.js • MongoDB • MERN
+            </p>
           </div>
 
-          <div className=" w-96 p-2 flex gap-2 justify-center relative lg:top-10 sm:top-14">
-            {/* <div
-              className="insta w-8 h-8 p-1 flex justify-center items-center rounded-lg hover:bg-blue-500  bg-slate-100"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
-            >
-              <a href="https://mail.google.com/mail/u/0/#inbox" target="#">
-                {" "}
-                <AiTwotoneMail className="text-2xl text-red-400   fw-bold" />{" "}
-              </a>
-            </div> */}
+          {/* Social Links */}
 
-            <div
-              className="insta w-8 h-8 p-1 flex justify-center items-center rounded-lg hover:bg-blue-500  bg-slate-100"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-              }}
+          <div className="flex justify-center gap-4 mt-6">
+            <a
+              href="https://www.linkedin.com/in/tarun-kumar-b788a9250/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <a href="https://www.linkedin.com/in/tarun-kumar-b788a9250/" target="_blank">
-                {" "}
-                <FaLinkedin className="text-2xl text-blue-600  fw-bold" />{" "}
-              </a>
-            </div>
+              <FaLinkedin className="text-3xl text-blue-600 hover:scale-110 transition" />
+            </a>
 
-            <div
-              className="insta w-8 h-8 p-1 flex justify-center items-center rounded-lg hover:bg-blue-500  bg-slate-100"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`
-              }}
+            <a
+              href="https://github.com/SDE-Tarun"
+              target="_blank"
+              rel="noreferrer"
             >
-              <a href="https://github.com/SDE-Tarun" target="_blank">
-                {" "}
-                <BsGithub className="text-2xl text-black  fw-bold"
-                style={{
-                  color: `${bgcolor === "white" ? "black" : "white"}`
-                }}
-                />{" "}
-              </a>
-            </div>
+              <BsGithub
+                className={`text-3xl hover:scale-110 transition ${isDark
+                    ? "text-white"
+                    : "text-black"
+                  }`}
+              />
+            </a>
           </div>
+
+          {/* Contact Details */}
 
           <div
-            className="w-68  p-4 flex flex-col gap-2 rounded-lg relative top-8"
+            className="
+            mt-8
+            rounded-2xl
+            p-4
+            flex
+            flex-col
+            gap-4
+          "
             style={{
-              background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
+              background: isDark
+                ? "#1D1D1D"
+                : "#F8FAFC",
             }}
           >
-            <div
-              className={`flex  items-center gap-2 ${
-                bgcolor === "white"
-                  ? "border-b border-grey-200 p-1"
-                  : "border-b border-slate-500"
-              }`}
-            >
-              <div
-                className={`phone w-10 h-10 p-2 flex items-center justify-center ${
-                  bgcolor == "white" ? "bg-white" : "bg-black"
-                } rounded-lg  hover:bg-blue-500`}
-              >
-                <CiMobile4 className="text-2xl text-pink-500 hover:text-white" />
-              </div>
+            <Info
+              icon={<CiMobile4 />}
+              text="+91 8076659404"
+              color="text-pink-500"
+            />
 
-              <div className="phone">
-                <h1
-                  className={`${
-                    bgcolor === "white" ? "text-black" : "text-white"
-                  }`}
-                >
-                  +91- 8076659404
-                </h1>
-              </div>
-            </div>
+            <Info
+              icon={<AiTwotoneMail />}
+              text="tarunkumar23j@gmail.com"
+              color="text-blue-500"
+            />
 
-            <div
-              className={`flex  items-center gap-2 ${
-                bgcolor === "white"
-                  ? "border-b border-grey-200 p-1"
-                  : "border-b border-slate-500"
-              }`}
-            >
-              <div
-                className={`phone w-10 h-10 p-2 flex items-center justify-center ${
-                  bgcolor == "white" ? "bg-white" : "bg-black"
-                } rounded-lg  hover:bg-blue-500`}
-              >
-                <AiTwotoneMail className="text-2xl text-sky-600 hover:text-white" />
-              </div>
+            <Info
+              icon={<IoLocationSharp />}
+              text="Delhi, India"
+              color="text-red-500"
+            />
 
-              <div className="phone">
-                <h1
-                  className={`${
-                    bgcolor === "white" ? "text-black" : "text-white"
-                  } text-sm sm:text-sm`}
-                >
-                  tarunkumar23j@gmail.com
-                </h1>
-              </div>
-            </div>
-
-            <div
-              className={`flex  items-center gap-2 ${
-                bgcolor === "white"
-                  ? "border-b border-grey-200 p-1"
-                  : "border-b border-slate-500"
-              }`}
-            >
-              <div
-                className={`phone w-10 h-10 p-2 flex items-center justify-center ${
-                  bgcolor == "white" ? "bg-white" : "bg-black"
-                } rounded-lg  hover:bg-blue-500`}
-              >
-                <IoLocationSharp className="text-2xl text-pink-600 hover:text-white" />
-              </div>
-
-              <div className="phone">
-                <h1
-                  className={`${
-                    bgcolor === "white" ? "text-black" : "text-white"
-                  }`}
-                >
-                  Delhi, India
-                </h1>
-              </div>
-            </div>
-
-            <div
-              className={`flex  items-center gap-2 ${
-                bgcolor === "white"
-                  ? "border-b border-grey-200 p-1"
-                  : "border-b border-slate-500"
-              }`}
-            >
-              <div
-                className={`phone w-10 h-10 p-2 flex items-center justify-center ${
-                  bgcolor == "white" ? "bg-white" : "bg-black"
-                } rounded-lg  hover:bg-blue-500`}
-              >
-                <BsCalendarDate className="text-2xl text-purple-600 hover:text-white" />
-              </div>
-
-              <div className="phone">
-                <h1
-                  className={`${
-                    bgcolor === "white" ? "text-black" : "text-white"
-                  }`}
-                >
-                  23 July 1998
-                </h1>
-              </div>
-            </div>
+            <Info
+              icon={<BsCalendarDate />}
+              text="23 July 1998"
+              color="text-purple-500"
+            />
           </div>
-          {/* <div className="flex relative top-5">
-            <button className="bg-blue-500 flex items-center rounded-lg justify-center text-white p-2 text-md text-nowrap w-36 h-10">
-              <a href={cv} download="Resume" className="flex">
-                <MdOutlineFileDownload className="text-2xl" />
-                Download CV
-              </a>
-            </button>
-          </div> */}
-          <div className="flex relative top-5">
-  <a href={cv} download="Resume">
-    <button
-      className="cursor-pointer flex justify-between items-center bg-gray-800 px-4 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[160px]"
-    >
-      Resume
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        className="w-5 h-5 animate-bounce"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-        />
-      </svg>
-    </button>
-  </a>
-</div>
+
+          {/* Resume Button */}
+
+          <div className="mt-8">
+            <a
+              href={cv}
+              download="Tarun_Kumar_Resume"
+            >
+              <button
+                className="
+                w-full
+                py-3
+                rounded-xl
+                bg-gradient-to-r
+                from-blue-600
+                to-purple-600
+                text-white
+                font-semibold
+                shadow-lg
+                hover:scale-[1.02]
+                transition-all
+                duration-300
+              "
+              >
+                Download Resume
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </>
+  );
+};
+
+const Info = ({ icon, text, color }) => {
+  return (
+    <div className="flex items-center gap-3">
+      <div
+        className={`
+          w-10
+          h-10
+          rounded-lg
+          bg-white
+          flex
+          items-center
+          justify-center
+          text-xl
+          ${color}
+        `}
+      >
+        {icon}
+      </div>
+
+      <span className="text-sm font-medium">
+        {text}
+      </span>
+    </div>
   );
 };
 

@@ -30,13 +30,13 @@ const Contact = ({ bgcolor, darkmode }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    
+
     const formData = new FormData(event.target);
     formData.append("access_key", "7d78993e-8962-489c-a26d-7ecce59ff99a");
-    
+
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-    
+
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -45,7 +45,7 @@ const Contact = ({ bgcolor, darkmode }) => {
       },
       body: json
     }).then((res) => res.json());
-    
+
     if (res.success) {
       alert(res.message);
       console.log("Success", res);
@@ -59,9 +59,8 @@ const Contact = ({ bgcolor, darkmode }) => {
   return (
     <>
       <div
-        className={` ${
-          darkmode === "dark" ? `bg-${bgcolor}` : `bg-white`
-        } p-10 rounded-lg flex flex-col gap-10`}
+        className={` ${darkmode === "dark" ? `bg-${bgcolor}` : `bg-white`
+          } p-10 rounded-lg flex flex-col gap-10`}
       >
         <h1
           className="text-3xl font-bold"
@@ -95,181 +94,95 @@ const Contact = ({ bgcolor, darkmode }) => {
             </h1>
           </div>
 
-          {/* <form onSubmit={onSubmit} ref={formRef}>
-            <div className="flex flex-col">
-              <label
-                id="naam"
-                style={{
-                  color: `${bgcolor === "white" ? "#000000" : "#A6A6A6"}`,
-                }}
-              >
-                Name*
-              </label>
-
-              <input
-                type="text"
-                className="w-10/12 h-2 border-b border-black outline-none"
-                style={{
-                  background: `${
-                    bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"
-                  }`,
-                  color: `${bgcolor === "white" ? "#000000" : "white"}`,
-                }}
-                onClick={handlecolorName}
-                name="name"
-                id="borderColorName"
-              />
-            </div>
-
-            <div className="my-10 flex flex-col">
-              <label
-                id="email"
-                style={{
-                  color: `${bgcolor === "white" ? "#000000" : "#A6A6A6"}`,
-                }}
-              >
-                Email*
-              </label>
-
-              <input
-                type="text"
-                className="w-10/12 h-2 border-b border-black outline-none"
-                style={{
-                  background: `${
-                    bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"
-                  }`,
-                  color: `${bgcolor === "white" ? "#000000" : "white"}`,
-                }}
-                onClick={handlecolorEmail}
-                name="email"
-                id="borderColorEmail"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label
-                id="message"
-                style={{
-                  color: `${bgcolor === "white" ? "#000000" : "#A6A6A6"}`,
-                }}
-              >
-                Message*
-              </label>
-              <input
-                type="text"
-                className="w-10/12 h-2 border-b border-black outline-none"
-                style={{
-                  background: `${
-                    bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"
-                  }`,
-                  color: `${bgcolor === "white" ? "#000000" : "white"}`,
-                }}
-                onClick={handlecolorMessage}
-                name="message"
-                id="borderColorMessage"
-              />
-            </div>
-
-            <button
-              className=" my-2 w-32 h-11 hover:bg-blue-500 hover:text-white font-bold rounded-lg btn-sumit border border-blue-500"
-              style={{
-                background: `${bgcolor === "white" ? "#f3f6f6" : "#1D1D1D"}`,
-                color: `${bgcolor === "white" ? "#000000" : "white"}`,
-              }}
-              type="submit"
-            >
-              Submit
-            </button>
-          </form> */}
-
           {/* Form */}
           <form
-  onSubmit={onSubmit}
-  ref={formRef}
-  className="flex flex-col gap-6 mt-6"
->
-  {/* Name */}
-  <div>
-    <label
-      className="block mb-2 font-medium"
-      style={{
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    >
-      Full Name
-    </label>
+            onSubmit={onSubmit}
+            ref={formRef}
+            className="flex flex-col gap-6 mt-6"
+          >
+            {/* Name */}
+            <div>
+              <label
+                className="block mb-2 font-medium"
+                style={{
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              >
+                Full Name
+              </label>
 
-    <input
-      type="text"
-      name="name"
-      required
-      placeholder="Enter your full name"
-      className="w-full p-4 rounded-xl border outline-none transition-all duration-300 focus:ring-4 focus:ring-red-300 focus:border-red-400"
-      style={{
-        background:
-          bgcolor === "white" ? "#ffffff" : "#2A2A2A",
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    />
-  </div>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Enter your full name"
+                className="w-full p-4 rounded-xl border outline-none transition-all duration-300 focus:ring-4 focus:ring-red-300 focus:border-red-400"
+                style={{
+                  background:
+                    bgcolor === "white" ? "#ffffff" : "#2A2A2A",
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              />
+            </div>
 
-  {/* Email */}
-  <div>
-    <label
-      className="block mb-2 font-medium"
-      style={{
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    >
-      Email Address
-    </label>
+            {/* Email */}
+            <div>
+              <label
+                className="block mb-2 font-medium"
+                style={{
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              >
+                Email Address
+              </label>
 
-    <input
-      type="email"
-      name="email"
-      required
-      placeholder="Enter your email"
-      className="w-full p-4 rounded-xl border outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-300 focus:border-blue-400"
-      style={{
-        background:
-          bgcolor === "white" ? "#ffffff" : "#2A2A2A",
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    />
-  </div>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                className="w-full p-4 rounded-xl border outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-300 focus:border-blue-400"
+                style={{
+                  background:
+                    bgcolor === "white" ? "#ffffff" : "#2A2A2A",
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              />
+            </div>
 
-  {/* Message */}
-  <div>
-    <label
-      className="block mb-2 font-medium"
-      style={{
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    >
-      Message
-    </label>
+            {/* Message */}
+            <div>
+              <label
+                className="block mb-2 font-medium"
+                style={{
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              >
+                Message
+              </label>
 
-    <textarea
-      name="message"
-      rows="6"
-      required
-      placeholder="Write your message..."
-      className="w-full p-4 rounded-xl border outline-none resize-none transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:border-purple-400"
-      style={{
-        background:
-          bgcolor === "white" ? "#ffffff" : "#2A2A2A",
-        color: bgcolor === "white" ? "#000" : "#fff",
-      }}
-    />
-  </div>
+              <textarea
+                name="message"
+                rows="6"
+                required
+                placeholder="Write your message..."
+                className="w-full p-4 rounded-xl border outline-none resize-none transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:border-purple-400"
+                style={{
+                  background:
+                    bgcolor === "white" ? "#ffffff" : "#2A2A2A",
+                  color: bgcolor === "white" ? "#000" : "#fff",
+                }}
+              />
+            </div>
 
-  {/* Button */}
-  <button
-    type="submit"
-    className="w-full sm:w-fit px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
-  >
-    Send Message 🚀
-  </button>
-</form>
+            {/* Button */}
+            <button
+              type="submit"
+              className="w-full sm:w-fit px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              Send Message 🚀
+            </button>
+          </form>
         </div>
       </div>
     </>

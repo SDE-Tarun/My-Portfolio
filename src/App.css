@@ -1,38 +1,268 @@
-/* html,body{
-   background-image: url("https://extendthemes.com/demos/mesmerize-pro-portfolio/wp-content/uploads/sites/16/2016/06/cropped-background-2726039-6x4.jpg");
-   scroll-behavior: smooth;
-   height: 100%;
-   width: 100%;
-} */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-html,body{
-   background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   scroll-behavior: smooth;
-   height: 100%;
-   width: 100%;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-.active{
-   color: blue;
-   background-color: blue;
+html{
+  scroll-behavior:smooth;
 }
+
+body{
+  min-height:100vh;
+  width:100%;
+  overflow-x:hidden;
+
+  background-image:
+  linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.75)
+  ),
+  url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+/* Main Layout */
 
 .homepage{
-   height: calc(100vh-70px);
+  min-height:100vh;
+  width:100%;
+  padding:20px;
 }
 
+/* Active Navbar */
+
+.active div{
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  ) !important;
+
+  color:white !important;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,.35);
+
+  transform:translateY(-2px);
+}
+
+.active h1,
+.active svg{
+  color:white !important;
+}
+
+/* Glass Effect */
+
+.glass-card{
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+  0 8px 32px rgba(0,0,0,.25);
+}
+
+/* Profile Card */
+
+.profile-card{
+  transition:all .35s ease;
+}
+
+.profile-card:hover{
+  transform:translateY(-6px);
+}
+
+.profile-image{
+  transition:.4s ease;
+}
+
+.profile-image:hover{
+  transform:scale(1.05);
+}
+
+/* Skill Cards */
+
+.skill-card{
+  transition:.3s ease;
+}
+
+.skill-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+
+/* Project Cards */
+
+.project-card{
+  transition:all .35s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+}
+
+.project-card img{
+  transition:.5s ease;
+}
+
+.project-card:hover img{
+  transform:scale(1.05);
+}
+
+/* Experience Cards */
+
+.experience-card{
+  transition:.3s ease;
+}
+
+.experience-card:hover{
+  transform:translateX(5px);
+}
+
+/* Contact Inputs */
+
+input,
+textarea{
+  transition:.3s ease;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#3b82f6 !important;
+
+  box-shadow:
+  0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* Resume Button */
+
+.resume-btn{
+  transition:.3s ease;
+}
+
+.resume-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* Social Icons */
+
+.social-icon{
+  transition:.3s ease;
+}
+
+.social-icon:hover{
+  transform:translateY(-4px) scale(1.1);
+}
+
+/* Mobile Menu Animation */
+
+.navbar-fade{
+  animation:navbarFade .4s ease;
+}
+
+@keyframes navbarFade{
+  from{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Welcome Animation */
+
+.tracking-in-contract-bck{
+  animation:tracking-in-contract-bck .9s cubic-bezier(.215,.610,.355,1.000) both;
+}
+
+@keyframes tracking-in-contract-bck{
+  0%{
+    letter-spacing:1em;
+    transform:translateZ(400px);
+    opacity:0;
+  }
+  40%{
+    opacity:.6;
+  }
+  100%{
+    transform:translateZ(0);
+    opacity:1;
+  }
+}
+
+/* Scrollbar */
+
 ::-webkit-scrollbar{
-   width: 0px;
-   scroll-behavior: smooth;
+  width:6px;
 }
 
 ::-webkit-scrollbar-track{
-   background: #F0F4F9     
+  background:#1e293b;
 }
 
 ::-webkit-scrollbar-thumb{
-   background:black
+  background:#3b82f6;
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#2563eb;
+}
+
+/* Dark Mode Text Visibility */
+
+.dark-text{
+  color:#f3f4f6;
+}
+
+.dark-subtext{
+  color:#d1d5db;
+}
+
+.dark-muted{
+  color:#9ca3af;
+}
+
+/* Responsive */
+
+@media(max-width:1024px){
+
+  .homepage{
+    padding:15px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .homepage{
+    padding:10px;
+  }
+
+}
+
+@media(max-width:640px){
+
+  body{
+    background-position:center;
+  }
+
+  .homepage{
+    gap:15px;
+  }
+
 }

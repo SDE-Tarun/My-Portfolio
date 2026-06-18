@@ -1,83 +1,120 @@
 import React from "react";
-import { FaRegUser } from "react-icons/fa";
-import { PiNotepad } from "react-icons/pi";
-import { FaLaptopCode } from "react-icons/fa";
-import { TiContacts } from "react-icons/ti";
-import { FaBriefcase } from "react-icons/fa";
-import { LiaBlogSolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
+
+import { FaRegUser } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa";
+import { FaBriefcase } from "react-icons/fa";
+import { TiContacts } from "react-icons/ti";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 
-const Navbar = ({bgcolor,darkmode}) => {
+const Navbar = ({ bgcolor, darkmode }) => {
+  const isDark = darkmode === "dark";
+
+  const navItems = [
+    {
+      name: "About",
+      path: "/",
+      icon: <FaRegUser />,
+    },
+    {
+      name: "Projects",
+      path: "/Projects",
+      icon: <FaLaptopCode />,
+    },
+    {
+      name: "Experience",
+      path: "/Experience",
+      icon: <FaBriefcase />,
+    },
+    {
+      name: "Skills",
+      path: "/Certify",
+      icon: <AiOutlineSafetyCertificate />,
+    },
+    {
+      name: "Contact",
+      path: "/Contact",
+      icon: <TiContacts />,
+    },
+  ];
+
   return (
-    <>
-      <nav className="lg:block sm:hidden h-full">
-        <div className={`w-24 rounded-lg  ${darkmode==="dark" ? `bg-${bgcolor}` : `bg-white`} p-5 flex flex-col items-center gap-2 me-5`}>
-          <NavLink to="/">
-            {" "}
-            <div
-              className="w-16 rounded-lg flex flex-col justify-center items-center p-2 bg-slate-100"
-              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
-
-            >
-              <FaRegUser className="text-2xl" />
-              <h1 className="text-sm">About</h1>
-            </div>{" "}
-          </NavLink>
-
-          {/* <NavLink to="/Resume">
-            {" "}
-            <div
-              className="w-16  rounded-lg flex flex-col  items-center p-2"
-              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
-            >
-              <PiNotepad className="text-2xl" />{" "}
-              <h1 className="text-sm">Resume</h1>
-            </div>
-          </NavLink> */}
-          <NavLink to="/Projects">
-            <div
-              className="w-16 rounded-lg flex flex-col justify-center items-center p-2"
-              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
-            >
-              <FaLaptopCode className="text-2xl" />
-              <h1 className="text-sm">Projects</h1>
-            </div>
-          </NavLink>
-
-          <NavLink to="/Experience">
-            <div
-              className="w-16 rounded-lg flex flex-col justify-center items-center p-2"
-              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
-            >
-              <FaBriefcase className="text-2xl" />
-              <h1 className="text-sm">Experience</h1>
-            </div>
-          </NavLink>
-
-          <NavLink to="/Certify">
-
-          <div
-            className="w-16  rounded-lg flex flex-col justify-center items-center p-2"
-            style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
+    <nav className="hidden xl:block">
+      <div
+        className="
+          w-28
+          rounded-3xl
+          p-4
+          border
+          shadow-xl
+          flex
+          flex-col
+          gap-4
+          sticky
+          top-6
+        "
+        style={{
+          background: isDark ? "#111111" : "#FFFFFF",
+          borderColor: isDark ? "#2F2F2F" : "#E5E7EB",
+        }}
+      >
+        {navItems.map((item, index) => (
+          <NavLink
+            key={index}
+            to={item.path}
+            end={item.path === "/"}
+            className={({ isActive }) =>
+              `
+              group
+              transition-all
+              duration-300
+              rounded-2xl
+              ${isActive
+                ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
+                : ""
+              }
+            `
+            }
           >
-            <AiOutlineSafetyCertificate className="text-2xl" />
-            <h1 className="text-sm p-1">Skills</h1>
-          </div>
+            {({ isActive }) => (
+              <div
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                  gap-2
+                  py-4
+                  rounded-2xl
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                "
+                style={{
+                  background: isActive
+                    ? "transparent"
+                    : isDark
+                      ? "#1D1D1D"
+                      : "#F8FAFC",
 
+                  color: isActive
+                    ? "#FFFFFF"
+                    : isDark
+                      ? "#A6A6A6"
+                      : "#000000",
+                }}
+              >
+                <div className="text-2xl">{item.icon}</div>
+
+                <span className="text-xs font-medium">
+                  {item.name}
+                </span>
+              </div>
+            )}
           </NavLink>
-          <NavLink to="/Contact">
-            <div
-              className="w-16 rounded-lg flex flex-col justify-center items-center p-2"
-              style={{ color: `${bgcolor==="white" ? "black" : "#A6A6A6"}`, background:`${bgcolor==="white" ? "#f3f6f6" : "#1D1D1D"}`}}
-            >
-              <TiContacts className="text-2xl" />
-              <h1 className="text-sm">Contacts</h1>
-            </div>
-          </NavLink>
-        </div>
-      </nav>
-    </>
+        ))}
+      </div>
+    </nav>
   );
 };
 
